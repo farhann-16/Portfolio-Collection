@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Portfolio | Digital Architect</title>
+    <meta name="description" content="Ultra-enhanced cyberpunk portfolio with black & neon green futurism, glassmorphism, and advanced micro-interactions">
+    
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 🌌 GLOBAL DESIGN SYSTEM */
+        :root {
+            --void-black: #0B0B0B;
+            --neon-core: #00FF88;
+            --neon-pulse: #1DB954;
+            --neon-glow: rgba(0, 255, 136, 0.15);
+            --glass-layer: rgba(15, 15, 15, 0.65);
+            --crt-scanline: linear-gradient(rgba(0,255,136,0.06) 1px, transparent 1px);
+            --terminal-green: #39FF14;
+            --error-red: #FF0040;
+            --warning-amber: #FFAA00;
+            --deep-black: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--void-black);
+            color: var(--neon-core);
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* 🎯 PERFORMANCE OPTIMIZATIONS */
+        .gpu-accelerated {
+            will-change: transform, opacity;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        /* 🌠 HERO SECTION */
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at center, 
+                rgba(0, 255, 136, 0.05) 0%, 
+                var(--void-black) 50%, 
+                var(--deep-black) 100%);
+            overflow: hidden;
+        }
+
+        .particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .profile-container {
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid var(--neon-core);
+            outline: 4px solid transparent;
+            background: var(--glass-layer);
+            backdrop-filter: blur(16px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            animation: profile-glow-pulse 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes profile-glow-pulse {
+            0%, 100% { 
+                box-shadow: 0 0 20px var(--neon-glow), 
+                           0 0 40px rgba(0, 255, 136, 0.1);
+                opacity: 1;
+            }
+            50% { 
+                box-shadow: 0 0 30px var(--neon-core), 
+                           0 0 60px rgba(0, 255, 136, 0.3);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 
+                0 0 5px var(--neon-core),
+                0 0 10px var(--neon-pulse),
+                0 0 20px var(--neon-glow);
+            animation: title-flicker 4s ease-in-out infinite;
+        }
+
+        @keyframes title-flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+            51% { opacity: 1; }
+            52% { opacity: 0.9; }
+            53% { opacity: 1; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--neon-pulse);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .hero-subtitle::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--crt-scanline);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hologram-btn {
+            position: relative;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid var(--neon-core);
+            color: var(--neon-core);
+            font-family: 'Orbitron', monospace;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hologram-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--neon-glow), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .hologram-btn:hover::before {
+            left: 100%;
+        }
+
+        .hologram-btn:hover {
+            transform: perspective(1000px) rotateX(5deg) scale(1.05);
+            box-shadow: 
+                0 10px 30px rgba(0, 255, 136, 0.3),
+                inset 0 0 20px rgba(0, 255, 136, 0.1);
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .pulse-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--neon-core);
+            border-radius: 50%;
+            opacity: 0;
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { opacity: 1; transform: translate(-50%, -50%) scale(0.1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(2); }
+        }
+
+        /* 🔥 STICKY NAVIGATION */
+        .cyber-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--glass-layer);
+            backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 255, 136, 0.18);
+            transition: transform 0.3s ease;
+        }
+
+        .cyber-nav.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--neon-core);
+            text-decoration: none;
+            text-shadow: 0 0 10px var(--neon-glow);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--neon-pulse);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-core);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--neon-core);
+            text-shadow: 0 0 10px var(--neon-glow);
+        }
+
+        /* 👤 ABOUT SECTION */
+        .about-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--void-black) 0%, rgba(11, 11, 11, 0.8) 100%);
+            position: relative;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--neon-core);
+            text-shadow: 0 0 20px var(--neon-glow);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--crt-scanline);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+        .bio-card {
+            background: var(--glass-layer);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(0, 255, 136, 0.18);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 
+                0 8px 32px rgba(0, 15, 11, 0.37),
+                inset 0 0 12px rgba(0, 255, 136, 0.08);
+        }
+
+        .bio-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 12px var(--neon-glow);
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        .bio-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .bio-avatar {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            background: var(--glass-layer);
+            border: 2px solid var(--neon-core);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            animation: avatar-float 6s ease-in-out infinite;
+        }
+
+        @keyframes avatar-float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .bio-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .fun-facts {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .fact-card {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--neon-core);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: fact-entrance 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .fact-card:nth-child(1) { animation-delay: 0.1s; }
+        .fact-card:nth-child(2) { animation-delay: 0.2s; }
+        .fact-card:nth-child(3) { animation-delay: 0.3s; }
+        .fact-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fact-entrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .fact-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .fact-title {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--neon-core);
+        }
+
+        /* 🧠 SKILLS MATRIX */
+        .skills-section {
+            padding: 8rem 2rem;
+            background: var(--deep-black);
+            position: relative;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .skill-orb {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background: var(--glass-layer);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .skill-orb:hover {
+            transform: scale(1.1) translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.3);
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .progress-ring {
+            transform: rotate(-90deg);
+            margin-bottom: 1rem;
+        }
+
+        .progress-circle {
+            fill: none;
+            stroke: rgba(0, 255, 136, 0.2);
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: all 0.5s ease;
+        }
+
+        .progress-circle.animated {
+            stroke: var(--neon-core);
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+            animation: progress-fill 2s ease-out forwards;
+        }
+
+        @keyframes progress-fill {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin-top: -2rem;
+        }
+
+        .skill-title {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--neon-core);
+        }
+
+        .skill-level {
+            color: var(--neon-pulse);
+            font-weight: 600;
+        }
+
+        .skill-hover-desc {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--glass-layer);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border: 1px solid var(--neon-core);
+        }
+
+        .skill-orb:hover .skill-hover-desc {
+            opacity: 1;
+            bottom: -40px;
+        }
+
+        /* 💼 PROJECTS SHOWCASE */
+        .projects-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, 
+                var(--void-black) 0%, 
+                rgba(0, 255, 136, 0.02) 50%, 
+                var(--void-black) 100%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .project-card {
+            background: var(--glass-layer);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 255, 136, 0.3);
+        }
+
+        .project-thumbnail {
+            height: 200px;
+            background: linear-gradient(45deg, var(--neon-glow), rgba(0, 255, 136, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--neon-core);
+        }
+
+        .project-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 255, 136, 0.2);
+            border: 1px solid var(--neon-core);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--neon-core);
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: var(--neon-core);
+            color: var(--void-black);
+            transform: scale(1.1);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--neon-core);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--terminal-green);
+            transform: translateX(5px);
+        }
+
+        .project-link::after {
+            content: ">";
+            transition: transform 0.3s ease;
+        }
+
+        .project-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        .coming-soon {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--neon-glow), transparent);
+            animation: loading-shimmer 2s infinite;
+        }
+
+        @keyframes loading-shimmer {
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* 📜 ACHIEVEMENTS TIMELINE */
+        .achievements-section {
+            padding: 8rem 2rem;
+            background: var(--deep-black);
+            position: relative;
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 4rem auto 0;
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--neon-core);
+            transform: translateX(-50%);
+        }
+
+        .timeline-node {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-node:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .node-glow {
+            width: 20px;
+            height: 20px;
+            background: var(--neon-core);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--neon-glow);
+            animation: node-pulse 2s ease-in-out infinite;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        @keyframes node-pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2); }
+        }
+
+        .certificate-card {
+            width: 45%;
+            background: var(--glass-layer);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .issuer-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 30px;
+            height: 30px;
+            background: var(--neon-core);
+            color: var(--void-black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .certificate-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--neon-core);
+        }
+
+        .issuer {
+            color: var(--neon-pulse);
+            margin-bottom: 1rem;
+        }
+
+        .verify-button {
+            background: transparent;
+            border: 1px solid var(--neon-core);
+            color: var(--neon-core);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .verify-button:hover {
+            background: var(--neon-core);
+            color: var(--void-black);
+        }
+
+        .crt-flicker {
+            animation: crt-flicker 0.1s infinite linear alternate;
+        }
+
+        @keyframes crt-flicker {
+            0% { opacity: 1; }
+            100% { opacity: 0.95; }
+        }
+
+        /* 📬 CONTACT TERMINAL */
+        .contact-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--void-black) 0%, rgba(0, 255, 136, 0.03) 100%);
+        }
+
+        .terminal-container {
+            max-width: 600px;
+            margin: 4rem auto 0;
+            background: var(--glass-layer);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: rgba(0, 255, 136, 0.1);
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--neon-core);
+        }
+
+        .cyber-form {
+            padding: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .cyber-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(0, 255, 136, 0.3);
+            color: var(--neon-core);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .cyber-input:focus {
+            outline: none;
+            border-bottom-color: var(--neon-core);
+            box-shadow: 0 2px 10px rgba(0, 255, 136, 0.3);
+        }
+
+        .cyber-input.error {
+            border-bottom-color: var(--error-red);
+            box-shadow: 0 2px 10px rgba(255, 0, 64, 0.3);
+        }
+
+        .cyber-input.success {
+            border-bottom-color: var(--terminal-green);
+            box-shadow: 0 2px 10px rgba(57, 255, 20, 0.3);
+        }
+
+        .input-underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-core);
+            transition: width 0.3s ease;
+        }
+
+        .cyber-input:focus + .input-underline {
+            width: 100%;
+        }
+
+        .hologram-label {
+            position: absolute;
+            top: 1rem;
+            left: 0;
+            font-family: 'Share Tech Mono', monospace;
+            color: rgba(0, 255, 136, 0.6);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .cyber-input:focus + .input-underline + .hologram-label,
+        .cyber-input:not(:placeholder-shown) + .input-underline + .hologram-label {
+            top: -10px;
+            font-size: 0.8rem;
+            color: var(--neon-core);
+        }
+
+        .transmit-btn {
+            width: 100%;
+            background: transparent;
+            border: 2px solid var(--neon-core);
+            color: var(--neon-core);
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .transmit-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--neon-core);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .transmit-btn:hover::before {
+            left: 0;
+        }
+
+        .transmit-btn:hover {
+            color: var(--void-black);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.5);
+        }
+
+        .signal-bars {
+            display: inline-block;
+            margin-left: 1rem;
+            animation: signal-animation 1s ease-in-out infinite;
+        }
+
+        @keyframes signal-animation {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* 🔗 QUANTUM FOOTER */
+        .quantum-footer {
+            background: var(--deep-black);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: var(--glass-layer);
+            border: 2px solid var(--neon-core);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neon-core);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .social-link:hover {
+            transform: scale(1.2) rotate(360deg);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.5);
+            background: var(--neon-core);
+            color: var(--void-black);
+        }
+
+        .copyright {
+            color: var(--neon-pulse);
+            font-family: 'Share Tech Mono', monospace;
+            animation: copyright-flicker 5s ease-in-out infinite;
+        }
+
+        @keyframes copyright-flicker {
+            0%, 100% { 
+                text-shadow: 0 0 5px var(--neon-glow);
+                opacity: 1;
+            }
+            50% { 
+                text-shadow: 0 0 10px var(--neon-core);
+                opacity: 0.8;
+            }
+        }
+
+        /* 🎮 KONAMI CODE EASTER EGG */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .matrix-rain.active {
+            opacity: 0.3;
+        }
+
+        /* 📱 RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .bio-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .bio-avatar {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-node {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            
+            .certificate-card {
+                width: 90%;
+                margin: 2rem 0;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .node-glow {
+                left: 20px;
+            }
+        }
+
+        /* 🎯 PERFORMANCE OPTIMIZATIONS */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* 🌟 UTILITY CLASSES */
+        .text-center { text-align: center; }
+        .mb-1 { margin-bottom: 1rem; }
+        .mb-2 { margin-bottom: 2rem; }
+        .mt-2 { margin-top: 2rem; }
+        .hidden { display: none; }
+        .visible { display: block; }
+    </style>
+</head>
+<body>
+    <!-- Matrix Rain Canvas for Easter Egg -->
+    <canvas class="matrix-rain" id="matrixCanvas"></canvas>
+
+    <!-- Sticky Navigation -->
+    <nav class="cyber-nav" id="cyberNav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">◉ CYBER</a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <canvas class="particle-canvas" id="particleCanvas"></canvas>
+        <div class="hero-content">
+            <div class="profile-container">
+                <div class="profile-image">
+                    🤖
+                </div>
+            </div>
+            <h1 class="hero-title">DIGITAL ARCHITECT</h1>
+            <p class="hero-subtitle">Crafting the future through code, design & innovation</p>
+            <div class="cta-container">
+                <button class="hologram-btn">
+                    <span class="pulse-ring"></span>
+                    🌟 View My Work
+                </button>
+                <button class="hologram-btn">
+                    <span class="pulse-ring"></span>
+                    📡 Get In Touch
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <h2 class="section-title">◉ SYSTEM PROFILE</h2>
+            <div class="bio-card">
+                <div class="bio-content">
+                    <div class="bio-avatar">
+                        👨‍💻
+                    </div>
+                    <div class="bio-text">
+                        <p>I'm a <strong>Digital Architect</strong> specializing in creating immersive, cutting-edge web experiences that push the boundaries of what's possible in cyberspace. With expertise spanning full-stack development, UI/UX design, and emerging technologies, I transform abstract concepts into tangible digital realities.</p>
+                        
+                        <p>My mission is to bridge the gap between human creativity and machine precision, crafting interfaces that feel both futuristic and intuitive. Every project is an opportunity to explore new frontiers in digital interaction.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-facts">
+                    <div class="fact-card">
+                        <span class="fact-icon">⚡</span>
+                        <div class="fact-title">Lightning Fast</div>
+                        <div>Sub-second loading times</div>
+                    </div>
+                    <div class="fact-card">
+                        <span class="fact-icon">🎯</span>
+                        <div class="fact-title">Precision Coded</div>
+                        <div>99.9% bug-free delivery</div>
+                    </div>
+                    <div class="fact-card">
+                        <span class="fact-icon">🔮</span>
+                        <div class="fact-title">Future Ready</div>
+                        <div>Bleeding-edge technologies</div>
+                    </div>
+                    <div class="fact-card">
+                        <span class="fact-icon">🌐</span>
+                        <div class="fact-title">Global Scale</div>
+                        <div>Enterprise-level solutions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Matrix -->
+    <section id="skills" class="skills-section">
+        <div class="section-container">
+            <h2 class="section-title">◉ NEURAL INTERFACE</h2>
+            <div class="skills-grid">
+                <div class="skill-orb" data-skill-level="95">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-circle" cx="60" cy="60" r="45" stroke-width="8"></circle>
+                    </svg>
+                    <div class="skill-icon">⚡</div>
+                    <div class="skill-title">Frontend Development</div>
+                    <div class="skill-level">95% Mastery</div>
+                    <div class="skill-hover-desc">React, Vue, Angular - Advanced UI/UX</div>
+                </div>
+                
+                <div class="skill-orb" data-skill-level="90">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-circle" cx="60" cy="60" r="45" stroke-width="8"></circle>
+                    </svg>
+                    <div class="skill-icon">🔧</div>
+                    <div class="skill-title">Backend Systems</div>
+                    <div class="skill-level">90% Mastery</div>
+                    <div class="skill-hover-desc">Node.js, Python, Cloud Architecture</div>
+                </div>
+                
+                <div class="skill-orb" data-skill-level="88">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-circle" cx="60" cy="60" r="45" stroke-width="8"></circle>
+                    </svg>
+                    <div class="skill-icon">🎨</div>
+                    <div class="skill-title">Digital Design</div>
+                    <div class="skill-level">88% Mastery</div>
+                    <div class="skill-hover-desc">UI/UX, Motion Graphics, 3D Modeling</div>
+                </div>
+                
+                <div class="skill-orb" data-skill-level="85">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-circle" cx="60" cy="60" r="45" stroke-width="8"></circle>
+                    </svg>
+                    <div class="skill-icon">🤖</div>
+                    <div class="skill-title">AI Integration</div>
+                    <div class="skill-level">85% Mastery</div>
+                    <div class="skill-hover-desc">Machine Learning, Neural Networks</div>
+                </div>
+                
+                <div class="skill-orb" data-skill-level="82">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-circle" cx="60" cy="60" r="45" stroke-width="8"></circle>
+                    </svg>
+                    <div class="skill-icon">🔐</div>
+                    <div class="skill-title">Cybersecurity</div>
+                    <div class="skill-level">82% Mastery</div>
+                    <div class="skill-hover-desc">Penetration Testing, Secure Coding</div>
+                </div>
+                
+                <div class="skill-orb" data-skill-level="78">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-circle" cx="60" cy="60" r="45" stroke-width="8"></circle>
+                    </svg>
+                    <div class="skill-icon">🌐</div>
+                    <div class="skill-title">Web3 & Blockchain</div>
+                    <div class="skill-level">78% Mastery</div>
+                    <div class="skill-hover-desc">Smart Contracts, DeFi, NFTs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Showcase -->
+    <section id="projects" class="projects-section">
+        <div class="section-container">
+            <h2 class="section-title">◉ PROJECT MATRIX</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        🚀
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">NeuroLink Dashboard</h3>
+                        <p class="project-description">
+                            An advanced analytics platform with real-time AI-powered insights, featuring a neural network-inspired interface and predictive data visualization.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TensorFlow.js</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        🌐
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">CyberCommerce Hub</h3>
+                        <p class="project-description">
+                            Next-generation e-commerce platform with blockchain integration, AR product visualization, and AI-powered recommendation systems.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Web3.js</span>
+                            <span class="tech-tag">WebXR</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-thumbnail">
+                        🎮
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Quantum Gaming Engine</h3>
+                        <p class="project-description">
+                            WebGL-based gaming framework with physics simulation, procedural generation, and multiplayer capabilities for immersive web games.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">WebGL</span>
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">WebRTC</span>
+                            <span class="tech-tag">WebAssembly</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card coming-soon">
+                    <div class="project-thumbnail">
+                        ⚡
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Neural API Gateway</h3>
+                        <p class="project-description">
+                            Revolutionary API management system with AI-driven traffic optimization, predictive scaling, and quantum-encrypted communications.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Coming Soon</span>
+                        </div>
+                        <a href="#" class="project-link">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Timeline -->
+    <section id="achievements" class="achievements-section">
+        <div class="section-container">
+            <h2 class="section-title">◉ ACHIEVEMENT LOG</h2>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-node">
+                    <div class="node-glow"></div>
+                    <div class="certificate-card">
+                        <div class="issuer-badge">▲</div>
+                        <h3 class="certificate-title">Advanced Neural Interface Design</h3>
+                        <p class="issuer">NeuroTech Institute • 2024</p>
+                        <button class="verify-button">
+                            <span class="crt-flicker">Verify Credential</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="timeline-node">
+                    <div class="node-glow"></div>
+                    <div class="certificate-card">
+                        <div class="issuer-badge">◆</div>
+                        <h3 class="certificate-title">Quantum Computing Specialist</h3>
+                        <p class="issuer">IBM Quantum Network • 2024</p>
+                        <button class="verify-button">
+                            <span class="crt-flicker">Verify Credential</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="timeline-node">
+                    <div class="node-glow"></div>
+                    <div class="certificate-card">
+                        <div class="issuer-badge">●</div>
+                        <h3 class="certificate-title">Cybersecurity Excellence Award</h3>
+                        <p class="issuer">CyberGuard Academy • 2023</p>
+                        <button class="verify-button">
+                            <span class="crt-flicker">Verify Credential</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="timeline-node">
+                    <div class="node-glow"></div>
+                    <div class="certificate-card">
+                        <div class="issuer-badge">★</div>
+                        <h3 class="certificate-title">Full-Stack Architect Certification</h3>
+                        <p class="issuer">TechCorp University • 2023</p>
+                        <button class="verify-button">
+                            <span class="crt-flicker">Verify Credential</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Terminal -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <h2 class="section-title">◉ COMMUNICATION TERMINAL</h2>
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    > SECURE_TRANSMISSION_PROTOCOL_v3.0.1 [ACTIVE]
+                </div>
+                <form class="cyber-form" id="cyberForm">
+                    <div class="input-group">
+                        <input type="text" class="cyber-input" id="name" name="name" required placeholder=" ">
+                        <div class="input-underline"></div>
+                        <label for="name" class="hologram-label">> ENTER YOUR NAME</label>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="email" class="cyber-input" id="email" name="email" required placeholder=" ">
+                        <div class="input-underline"></div>
+                        <label for="email" class="hologram-label">> ENTER EMAIL ADDRESS</label>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="text" class="cyber-input" id="subject" name="subject" required placeholder=" ">
+                        <div class="input-underline"></div>
+                        <label for="subject" class="hologram-label">> MESSAGE SUBJECT</label>
+                    </div>
+                    
+                    <div class="input-group">
+                        <textarea class="cyber-input" id="message" name="message" rows="4" required placeholder=" "></textarea>
+                        <div class="input-underline"></div>
+                        <label for="message" class="hologram-label">> MESSAGE CONTENT</label>
+                    </div>
+                    
+                    <button type="submit" class="transmit-btn">
+                        SEND TRANSMISSION 
+                        <span class="signal-bars">⎹⎹⎹⎹</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Footer -->
+    <footer class="quantum-footer">
+        <div class="social-links">
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">💼</a>
+            <a href="#" class="social-link">🐙</a>
+            <a href="#" class="social-link">📧</a>
+        </div>
+        <p class="copyright">
+            © 2025 Digital Architect | Crafted in the Cyber Realm | All rights reserved
+        </p>
+    </footer>
+
+    <script>
+        // 🚀 CYBERPUNK PORTFOLIO ENGINE
+        class CyberpunkPortfolio {
+            constructor() {
+                this.konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+                this.konamiIndex = 0;
+                this.lastScrollY = 0;
+                this.ticking = false;
+                
+                this.init();
+            }
+
+            init() {
+                this.initParticleCanvas();
+                this.initMatrixRain();
+                this.initStickyNav();
+                this.initSmoothScroll();
+                this.initSkillOrbs();
+                this.initFormValidation();
+                this.initKonamiCode();
+                this.initIntersectionObserver();
+                this.initTiltEffects();
+                
+                console.log('🤖 Cyberpunk Portfolio System Online');
+            }
+
+            // 🌟 PARTICLE BACKGROUND SYSTEM
+            initParticleCanvas() {
+                const canvas = document.getElementById('particleCanvas');
+                const ctx = canvas.getContext('2d');
+                const particles = [];
+                
+                const resizeCanvas = () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                };
+                
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+
+                // Create particles
+                for (let i = 0; i < 80; i++) {
+                    particles.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: (Math.random() - 0.5) * 0.8,
+                        vy: (Math.random() - 0.5) * 0.8,
+                        size: Math.random() * 2 + 1,
+                        opacity: Math.random() * 0.6 + 0.2,
+                        pulseSpeed: Math.random() * 0.02 + 0.01
+                    });
+                }
+
+                const animate = () => {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    
+                    particles.forEach((particle, index) => {
+                        // Update position
+                        particle.x += particle.vx;
+                        particle.y += particle.vy;
+                        
+                        // Boundary wrapping
+                        if (particle.x < 0) particle.x = canvas.width;
+                        if (particle.x > canvas.width) particle.x = 0;
+                        if (particle.y < 0) particle.y = canvas.height;
+                        if (particle.y > canvas.height) particle.y = 0;
+                        
+                        // Pulsing effect
+                        particle.opacity = 0.2 + Math.sin(Date.now() * particle.pulseSpeed + index) * 0.4;
+                        
+                        // Draw particle
+                        ctx.beginPath();
+                        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(0, 255, 136, ${particle.opacity})`;
+                        ctx.fill();
+                        
+                        // Draw connections
+                        particles.forEach((otherParticle, otherIndex) => {
+                            if (index !== otherIndex) {
+                                const dx = particle.x - otherParticle.x;
+                                const dy = particle.y - otherParticle.y;
+                                const distance = Math.sqrt(dx * dx + dy * dy);
+                                
+                                if (distance < 100) {
+                                    const opacity = (100 - distance) / 100 * 0.3;
+                                    ctx.beginPath();
+                                    ctx.moveTo(particle.x, particle.y);
+                                    ctx.lineTo(otherParticle.x, otherParticle.y);
+                                    ctx.strokeStyle = `rgba(0, 255, 136, ${opacity})`;
+                                    ctx.stroke();
+                                }
+                            }
+                        });
+                    });
+                    
+                    requestAnimationFrame(animate);
+                };
+                
+                animate();
+            }
+
+            // 🎮 MATRIX RAIN EASTER EGG
+            initMatrixRain() {
+                const canvas = document.getElementById('matrixCanvas');
+                const ctx = canvas.getContext('2d');
+                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+                const drops = [];
+                
+                const resizeCanvas = () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                    
+                    // Initialize drops
+                    drops.length = 0;
+                    const fontSize = 14;
+                    const columns = canvas.width / fontSize;
+                    
+                    for (let i = 0; i < columns; i++) {
+                        drops[i] = Math.random() * -100;
+                    }
+                };
+                
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+                
+                this.animateMatrixRain = () => {
+                    if (!canvas.classList.contains('active')) return;
+                    
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    ctx.fillStyle = '#00FF88';
+                    ctx.font = '14px monospace';
+                    
+                    const fontSize = 14;
+                    const columns = canvas.width / fontSize;
+                    
+                    for (let i = 0; i < drops.length; i++) {
+                        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                        
+                        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                            drops[i] = 0;
+                        }
+                        
+                        drops[i]++;
+                    }
+                    
+                    requestAnimationFrame(this.animateMatrixRain);
+                };
+            }
+
+            // 🔥 STICKY NAVIGATION
+            initStickyNav() {
+                const nav = document.getElementById('cyberNav');
+                
+                window.addEventListener('scroll', () => {
+                    if (!this.ticking) {
+                        requestAnimationFrame(() => {
+                            const currentScrollY = window.pageYOffset;
+                            
+                            if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
+                                nav.classList.add('hidden');
+                            } else {
+                                nav.classList.remove('hidden');
+                            }
+                            
+                            this.lastScrollY = currentScrollY;
+                            this.ticking = false;
+                        });
+                        this.ticking = true;
+                    }
+                });
+            }
+
+            // 🎯 SMOOTH SCROLL
+            initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = document.querySelector(anchor.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            }
+
+            // 🧠 SKILL ORBS ANIMATION
+            initSkillOrbs() {
+                const skillOrbs = document.querySelectorAll('.skill-orb');
+                
+                skillOrbs.forEach(orb => {
+                    const circle = orb.querySelector('.progress-circle');
+                    const skillLevel = parseInt(orb.dataset.skillLevel);
+                    const circumference = 2 * Math.PI * 45; // radius = 45
+                    const offset = circumference - (skillLevel / 100) * circumference;
+                    
+                    circle.style.strokeDasharray = circumference;
+                    circle.style.strokeDashoffset = circumference;
+                    
+                    // Intersection Observer for animation trigger
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                setTimeout(() => {
+                                    circle.classList.add('animated');
+                                    circle.style.strokeDashoffset = offset;
+                                }, Math.random() * 500);
+                            }
+                        });
+                    });
+                    
+                    observer.observe(orb);
+                    
+                    // Hover particle burst effect
+                    orb.addEventListener('mouseenter', () => {
+                        this.createParticleBurst(orb);
+                    });
+                });
+            }
+
+            // ✨ PARTICLE BURST EFFECT
+            createParticleBurst(element) {
+                const rect = element.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                for (let i = 0; i < 15; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.cssText = `
+                        position: fixed;
+                        width: 4px;
+                        height: 4px;
+                        background: var(--neon-core);
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 9999;
+                        left: ${centerX}px;
+                        top: ${centerY}px;
+                    `;
+                    
+                    document.body.appendChild(particle);
+                    
+                    const angle = (i / 15) * Math.PI * 2;
+                    const velocity = 3 + Math.random() * 4;
+                    const vx = Math.cos(angle) * velocity;
+                    const vy = Math.sin(angle) * velocity;
+                    
+                    let x = 0, y = 0, opacity = 1;
+                    
+                    const animate = () => {
+                        x += vx;
+                        y += vy * 0.98; // gravity effect
+                        opacity -= 0.03;
+                        
+                        particle.style.transform = `translate(${x}px, ${y}px)`;
+                        particle.style.opacity = opacity;
+                        
+                        if (opacity > 0) {
+                            requestAnimationFrame(animate);
+                        } else {
+                            particle.remove();
+                        }
+                    };
+                    
+                    requestAnimationFrame(animate);
+                }
+            }
+
+            // 📬 FORM VALIDATION
+            initFormValidation() {
+                const form = document.getElementById('cyberForm');
+                const inputs = form.querySelectorAll('.cyber-input');
+                
+                inputs.forEach(input => {
+                    input.addEventListener('input', () => {
+                        this.validateField(input);
+                    });
+                    
+                    input.addEventListener('blur', () => {
+                        this.validateField(input);
+                    });
+                });
+                
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleFormSubmission(form);
+                });
+            }
+
+            validateField(input) {
+                const value = input.value.trim();
+                let isValid = true;
+                
+                if (input.hasAttribute('required') && !value) {
+                    isValid = false;
+                } else if (input.type === 'email' && value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    isValid = emailRegex.test(value);
+                }
+                
+                input.classList.remove('error', 'success');
+                if (value) {
+                    input.classList.add(isValid ? 'success' : 'error');
+                }
+                
+                return isValid;
+            }
+
+            handleFormSubmission(form) {
+                const submitBtn = form.querySelector('.transmit-btn');
+                const originalText = submitBtn.innerHTML;
+                
+                // Disable form
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'TRANSMITTING... <span class="signal-bars">⎹⎹⎹⎹</span>';
+                
+                // Particle disintegration effect
+                this.createFormParticles(form);
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = 'TRANSMISSION COMPLETE ✓';
+                    submitBtn.style.background = 'var(--terminal-green)';
+                    submitBtn.style.borderColor = 'var(--terminal-green)';
+                    submitBtn.style.color = 'var(--void-black)';
+                    
+                    setTimeout(() => {
+                        form.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.style.borderColor = '';
+                        submitBtn.style.color = '';
+                    }, 2000);
+                }, 1500);
+            }
+
+            createFormParticles(form) {
+                const rect = form.getBoundingClientRect();
+                const particles = 30;
+                
+                for (let i = 0; i < particles; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.cssText = `
+                        position: fixed;
+                        width: 3px;
+                        height: 3px;
+                        background: var(--neon-core);
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 9999;
+                        left: ${rect.left + Math.random() * rect.width}px;
+                        top: ${rect.top + Math.random() * rect.height}px;
+                    `;
+                    
+                    document.body.appendChild(particle);
+                    
+                    const vx = (Math.random() - 0.5) * 8;
+                    const vy = (Math.random() - 0.5) * 8;
+                    let x = 0, y = 0, opacity = 1;
+                    
+                    const animate = () => {
+                        x += vx;
+                        y += vy;
+                        opacity -= 0.02;
+                        
+                        particle.style.transform = `translate(${x}px, ${y}px)`;
+                        particle.style.opacity = opacity;
+                        
+                        if (opacity > 0) {
+                            requestAnimationFrame(animate);
+                        } else {
+                            particle.remove();
+                        }
+                    };
+                    
+                    requestAnimationFrame(animate);
+                }
+            }
+
+            // 🎮 KONAMI CODE EASTER EGG
+            initKonamiCode() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.keyCode === this.konamiCode[this.konamiIndex]) {
+                        this.konamiIndex++;
+                        if (this.konamiIndex === this.konamiCode.length) {
+                            this.activateMatrixMode();
+                            this.konamiIndex = 0;
+                        }
+                    } else {
+                        this.konamiIndex = 0;
+                    }
+                });
+            }
+
+            activateMatrixMode() {
+                const canvas = document.getElementById('matrixCanvas');
+                canvas.classList.add('active');
+                this.animateMatrixRain();
+                
+                setTimeout(() => {
+                    canvas.classList.remove('active');
+                }, 10000);
+                
+                console.log('🎮 Matrix Mode Activated! The code is strong with this one...');
+            }
+
+            // 👁️ INTERSECTION OBSERVER
+            initIntersectionObserver() {
+                const options = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, options);
+                
+                // Observe animated elements
+                document.querySelectorAll('.project-card, .certificate-card, .fact-card').forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(el);
+                });
+            }
+
+            // 🎭 TILT EFFECTS
+            initTiltEffects() {
+                const tiltElements = document.querySelectorAll('.project-card, .skill-orb, .certificate-card');
+                
+                tiltElements.forEach(element => {
+                    element.addEventListener('mousemove', (e) => {
+                        const rect = element.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        
+                        const rotateX = (y - centerY) / centerY * 10;
+                        const rotateY = (centerX - x) / centerX * 10;
+                        
+                        element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    });
+                    
+                    element.addEventListener('mouseleave', () => {
+                        element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                    });
+                });
+            }
+        }
+
+        // 🚀 INITIALIZE PORTFOLIO
+        document.addEventListener('DOMContentLoaded', () => {
+            new CyberpunkPortfolio();
+        });
+
+        // 📊 PERFORMANCE MONITORING
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                const perfData = performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`⚡ Portfolio loaded in ${loadTime}ms`);
+                
+                // Lighthouse score simulation
+                if (loadTime < 2000) {
+                    console.log('🏆 Performance Score: 95+ (Excellent!)');
+                }
+            });
+        }
+
+        // 🔧 SERVICE WORKER REGISTRATION
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('🛡️ Service Worker registered'))
+                    .catch(err => console.log('⚠️ Service Worker registration failed'));
+            });
+        }
+    </script>
+</body>
+</html>

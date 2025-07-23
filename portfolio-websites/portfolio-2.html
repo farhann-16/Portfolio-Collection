@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farhan- Data Alchemist & Tech Innovator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO Neuro-Strategy -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Farhan",
+        "jobTitle": "Data Alchemist",
+        "description": "Transforming data into digital gold through neural networks and quantum algorithms",
+        "skills": ["Python", "Machine Learning", "Data Science", "Neural Networks", "Quantum CSS"],
+        "url": "https://farhan-portfolio.com"
+    }
+    </script>
+    
+    <style>
+        /* ===== CSS CUSTOM PROPERTIES ===== */
+        :root {
+            --primary-bg: #0F0F0F;
+            --secondary-bg: rgba(15, 15, 15, 0.8);
+            --accent-orange: #FF6A00;
+            --accent-orange-light: #FF9E58;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 106, 0, 0.2);
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --blur-intensity: 12px;
+            --glow-size: 15px;
+            --transition-speed: 0.3s;
+        }
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ===== SCROLL PROGRESS INDICATOR ===== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-orange), var(--accent-orange-light));
+            z-index: 10000;
+            box-shadow: 0 0 var(--glow-size) var(--accent-orange);
+            transition: width 0.1s ease;
+        }
+
+        /* ===== PARTICLES BACKGROUND ===== */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* ===== GLASSMORPHISM FOUNDATION ===== */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-intensity));
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+            opacity: 0.5;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            padding: 15px 30px;
+            z-index: 1000;
+            transition: all var(--transition-speed) ease;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: auto; /* This pushes it to the left */
+        }
+
+
+
+        .brand-pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-orange);
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 5px var(--accent-orange); 
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 20px var(--accent-orange); 
+                transform: scale(1.2);
+            }
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 15px;
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-speed) ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 80%;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: -10px;
+            height: 3px;
+            background: var(--accent-orange);
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px var(--accent-orange);
+        }
+
+        /* ===== HAMBURGER MENU ===== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--accent-orange);
+            transition: all var(--transition-speed) ease;
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            min-height: 100vh;
+            padding: 120px 0 80px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+        }
+
+        /* ===== KINETIC TYPOGRAPHY ===== */
+        .kinetic-text {
+            transition: transform 0.3s ease;
+        }
+
+        .kinetic-text.compress {
+            transform: scaleY(0.98);
+        }
+
+        .kinetic-text.expand {
+            transform: scaleY(1.02);
+        }
+
+        /* ===== HOME SECTION ===== */
+        #home {
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 106, 0, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .text-glow {
+            color: var(--text-primary);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .text-neural {
+            color: var(--accent-orange);
+            text-shadow: 0 0 30px var(--accent-orange);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            padding: 25px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .hero-btn {
+            padding: 12px 24px;
+            background: linear-gradient(45deg, var(--accent-orange), var(--accent-orange-light));
+            border: none;
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.3);
+        }
+
+        /* ===== NEURAL NETWORK VISUALIZATION ===== */
+        .neural-network {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .node {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, var(--accent-orange), rgba(255, 106, 0, 0.3));
+            border-radius: 50%;
+            border: 2px solid var(--accent-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: node-pulse 2s infinite alternate;
+        }
+
+        .node-1 { top: 50px; left: 50px; animation-delay: 0s; }
+        .node-2 { top: 50px; right: 50px; animation-delay: 0.5s; }
+        .node-3 { bottom: 50px; left: 100px; animation-delay: 1s; }
+        .node-4 { bottom: 50px; right: 100px; animation-delay: 1.5s; }
+
+        @keyframes node-pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 20px var(--accent-orange);
+            }
+            100% {
+                transform: scale(1.1);
+                box-shadow: 0 0 40px var(--accent-orange);
+            }
+        }
+
+        .connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-orange), transparent, var(--accent-orange));
+            transform-origin: left;
+        }
+
+        .con-1 {
+            top: 90px;
+            left: 130px;
+            width: 140px;
+            animation: data-flow 3s infinite;
+        }
+
+        .con-2 {
+            bottom: 90px;
+            left: 180px;
+            width: 40px;
+            animation: data-flow 3s infinite 1s;
+        }
+
+        .con-3 {
+            top: 130px;
+            left: 90px;
+            width: 100px;
+            transform: rotate(70deg);
+            animation: data-flow 3s infinite 2s;
+        }
+
+        @keyframes data-flow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== HOVER EFFECTS ===== */
+        .hover-tilt {
+            transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .hover-tilt:hover {
+            transform: perspective(1200px) rotateX(5deg) rotateY(5deg) translateZ(15px);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .about-card {
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-orange);
+        }
+
+        .card-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 106, 0, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease;
+        }
+
+        .about-card:hover .card-glow {
+            opacity: 1;
+        }
+
+        /* ===== DNA STRAND ANIMATION ===== */
+        .dna-strand {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 40px;
+            height: 60px;
+        }
+
+        .helix {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: var(--accent-orange);
+            opacity: 0;
+            animation: dna-spiral 4s infinite linear;
+        }
+
+        .helix-1 { animation-delay: 0s; }
+        .helix-2 { animation-delay: 2s; }
+
+        .about-card:hover .helix {
+            opacity: 1;
+        }
+
+        @keyframes dna-spiral {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        /* ===== PULSE RING ===== */
+        .pulse-ring {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--accent-orange);
+            border-radius: 50%;
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* ===== QUANTUM PARTICLES ===== */
+        .quantum-particles {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            animation: quantum-move 3s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) {
+            animation-delay: 0s;
+            top: 10px;
+            left: 10px;
+        }
+
+        .particle:nth-child(2) {
+            animation-delay: 1s;
+            top: 30px;
+            left: 30px;
+        }
+
+        .particle:nth-child(3) {
+            animation-delay: 2s;
+            top: 20px;
+            left: 20px;
+        }
+
+        @keyframes quantum-move {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(20px, -10px); }
+            50% { transform: translate(-10px, 20px); }
+            75% { transform: translate(15px, 15px); }
+        }
+
+        /* ===== SKILLS SECTION ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .skill-category {
+            padding: 30px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--accent-orange);
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .skill-bar {
+            width: 150px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-orange), var(--accent-orange-light));
+            border-radius: 3px;
+            width: 0%;
+            transition: width 1.5s ease;
+            box-shadow: 0 0 10px var(--accent-orange);
+        }
+
+        /* ===== DNA ANALYZER ===== */
+        .dna-analyzer {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .dna-analyzer h3 {
+            margin-bottom: 30px;
+            color: var(--accent-orange);
+        }
+
+        .genome-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .gene-strand {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gene {
+            padding: 12px 24px;
+            background: rgba(255, 106, 0, 0.2);
+            border: 2px solid var(--accent-orange);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            user-select: none;
+        }
+
+        .gene:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px var(--accent-orange);
+        }
+
+        .mutate-btn {
+            padding: 15px 30px;
+            background: linear-gradient(45deg, var(--accent-orange), var(--accent-orange-light));
+            border: none;
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .mutate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.3);
+        }
+
+        /* ===== PROJECTS SECTION ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            padding: 0;
+            overflow: hidden;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .project-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-visual {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light));
+            position: relative;
+        }
+
+        .project-ai {
+            background: linear-gradient(135deg, #FF6A00, #FF9E58, #00FFB7);
+        }
+
+        .project-data {
+            background: linear-gradient(135deg, #FF6A00, #FF3E6D, #7C4DFF);
+        }
+
+        .project-nlp {
+            background: linear-gradient(135deg, #FF6A00, #FFD23F, #00E676);
+        }
+
+        .project-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
+            animation: scan-lines 3s infinite linear;
+        }
+
+        @keyframes scan-lines {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 15, 15, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-link {
+            padding: 10px 20px;
+            background: var(--accent-orange);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--accent-orange);
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent-orange);
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            padding: 5px 12px;
+            background: rgba(255, 106, 0, 0.2);
+            border: 1px solid var(--accent-orange);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--accent-orange);
+        }
+
+        /* ===== CERTIFICATES SECTION ===== */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .certificate-card {
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cert-badge {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px var(--accent-orange));
+        }
+
+        .certificate-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent-orange);
+        }
+
+        .cert-issuer {
+            font-weight: 600;
+            margin-top: 15px;
+            color: var(--text-secondary);
+        }
+
+        .cert-date {
+            font-size: 0.9rem;
+            color: var(--accent-orange);
+            margin-top: 5px;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            padding: 40px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--accent-orange);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all var(--transition-speed) ease;
+            border: 1px solid transparent;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent-orange);
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(255, 106, 0, 0.2);
+        }
+
+        .link-icon {
+            font-size: 1.5rem;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-form {
+            padding: 40px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: var(--text-secondary);
+            pointer-events: none;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group input:valid,
+        .form-group textarea:valid {
+            border-bottom-color: var(--accent-orange);
+        }
+
+        .form-group input:focus + label,
+        .form-group textarea:focus + label,
+        .form-group input:valid + label,
+        .form-group textarea:valid + label {
+            top: -10px;
+            left: 0;
+            font-size: 0.8rem;
+            color: var(--accent-orange);
+        }
+
+        .input-border {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: width var(--transition-speed) ease;
+        }
+
+        .form-group input:focus ~ .input-border,
+        .form-group textarea:focus ~ .input-border {
+            width: 100%;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, var(--accent-orange), var(--accent-orange-light));
+            border: none;
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.3);
+        }
+
+        .btn-glow {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .submit-btn:hover .btn-glow {
+            left: 100%;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .neural-network {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --blur-intensity: 8px;
+            }
+            
+            .navbar {
+                width: 95%;
+                padding: 10px 20px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 250px;
+                height: calc(100vh - 80px);
+                background: rgba(15, 15, 15, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 30px;
+                transition: right var(--transition-speed) ease;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-orange);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-orange-light);
+        }
+
+        /* ===== SELECTION STYLING ===== */
+        ::selection {
+            background: var(--accent-orange);
+            color: var(--text-primary);
+        }
+
+        ::-moz-selection {
+            background: var(--accent-orange);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar glass-panel">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">FARHAN</span>
+                <div class="brand-pulse"></div>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#certificates" class="nav-link" data-section="certificates">Certificates</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </div>
+            <div class="nav-indicator"></div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title kinetic-text">
+                        <span class="text-glow">Diwan</span>
+                        <span class="text-neural">FarhanMadar</span>
+                    </h1>
+                    <p class="hero-subtitle">Leveraging data science, analytics, and machine learning to turn raw data into strategic business insights</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="hero-btn">View my work</a>
+                        <a href="#" class="hero-btn">Download CV</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="neural-network">
+                        <div class="node node-1"></div>
+                        <div class="node node-2"></div>
+                        <div class="node node-3"></div>
+                        <div class="node node-4"></div>
+                        <div class="connection con-1"></div>
+                        <div class="connection con-2"></div>
+                        <div class="connection con-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title kinetic-text">About.exe</h2>
+            <div class="about-content">
+                <div class="about-card glass-panel hover-tilt">
+                    <div class="card-glow"></div>
+                    <h3>🧬 Collect</h3>
+                    <p>Extracting data from APIs, SQL databases, spreadsheets, and web scraping methods. I ensure accuracy, completeness, and structure to maintain data quality from the start of every project..</p>
+                    <div class="dna-strand">
+                        <div class="helix helix-1"></div>
+                        <div class="helix helix-2"></div>
+                    </div>
+                </div>
+                <div class="about-card glass-panel hover-tilt">
+                    <div class="card-glow"></div>
+                    <h3>⚡ Process</h3>
+                    <p>Cleaning, transforming, and preparing data using libraries like Pandas and NumPy. I handle null values, outliers, and apply techniques that make the dataset suitable for meaningful analysis.</p>
+                    <div class="pulse-ring"></div>
+                </div>
+                <div class="about-card glass-panel hover-tilt">
+                    <div class="card-glow"></div>
+                    <h3>🌌 Visualize</h3>
+                    <p>Creating impactful visualizations and dashboards using Matplotlib and Seaborn to reveal trends, compare metrics, and support data-driven decisions through clear, accessible storytelling.</p>
+                    <div class="quantum-particles">
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title kinetic-text">Tech.DNA</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass-panel">
+                    <h3>🐍 Data Science</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-level="95">
+                            <span>Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="88">
+                            <span>Pandas</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="92">
+                            <span>NumPy</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <span>Scikit-learn</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category glass-panel">
+                    <h3>🤖 Machine Learning</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-level="90">
+                            <span>TensorFlow</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="87">
+                            <span>PyTorch</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="83">
+                            <span>Keras</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category glass-panel">
+                    <h3>🌐 Web Tech</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-level="94">
+                            <span>HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="91">
+                            <span>JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-level="86">
+                            <span>React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech DNA Analyzer -->
+            <div class="dna-analyzer glass-panel">
+                <h3>🧬 Skill Genome Visualizer</h3>
+                <div class="genome-container">
+                    <div class="gene-strand">
+                        <div class="gene python">Python</div>
+                        <div class="gene ml">ML</div>
+                        <div class="gene data">Data</div>
+                        <div class="gene web">Web</div>
+                    </div>
+                    <div class="mutation-lab">
+                        <button class="mutate-btn">Mutate Skills</button>
+                        <div class="mutation-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title kinetic-text">Neural.Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card glass-panel hover-tilt">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Live</a>
+                                <a href="#" class="project-link">Code</a>
+                            </div>
+                        </div>
+                        <div class="project-visual project-ai"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>🤖 AI Sales Predictor</h3>
+                        <p>Machine learning model that predicts sales trends using neural networks and time-series analysis.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card glass-panel hover-tilt">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Live</a>
+                                <a href="#" class="project-link">Code</a>
+                            </div>
+                        </div>
+                        <div class="project-visual project-data"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>📊 Data Visualization Suite</h3>
+                        <p>Interactive dashboard for real-time data analysis with beautiful, responsive visualizations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card glass-panel hover-tilt">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Live</a>
+                                <a href="#" class="project-link">Code</a>
+                            </div>
+                        </div>
+                        <div class="project-visual project-nlp"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>💬 NLP Sentiment Engine</h3>
+                        <p>Advanced natural language processing tool for sentiment analysis and text classification.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section">
+        <div class="container">
+            <h2 class="section-title kinetic-text">Digital.Credentials</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card glass-panel hover-tilt">
+                    <div class="cert-badge">🏆</div>
+                    <h3>Machine Learning Specialist</h3>
+                    <p>Advanced certification in ML algorithms and deep learning frameworks</p>
+                    <div class="cert-issuer">TechCorp Academy</div>
+                    <div class="cert-date">2024</div>
+                </div>
+                
+                <div class="certificate-card glass-panel hover-tilt">
+                    <div class="cert-badge">🎯</div>
+                    <h3>Data Science Professional</h3>
+                    <p>Comprehensive training in statistical analysis and data modeling</p>
+                    <div class="cert-issuer">DataInstitute</div>
+                    <div class="cert-date">2023</div>
+                </div>
+                
+                <div class="certificate-card glass-panel hover-tilt">
+                    <div class="cert-badge">⚡</div>
+                    <h3>Python Developer</h3>
+                    <p>Advanced Python programming and framework expertise</p>
+                    <div class="cert-issuer">CodeAcademy Pro</div>
+                    <div class="cert-date">2023</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title kinetic-text">Neural.Link</h2>
+            <div class="contact-content">
+                <div class="contact-info glass-panel">
+                    <h3>🌐 Connect to the Network</h3>
+                    <p>Ready to collaborate on the next breakthrough? Let's merge our neural pathways and create something extraordinary.</p>
+                    <div class="contact-links">
+                        <a href="mailto:farhan@example.com" class="contact-link">
+                            <span class="link-icon">📧</span>
+                            <span>farhan@example.com</span>
+                        </a>
+                        <a href="https://linkedin.com/in/farhan" class="contact-link">
+                            <span class="link-icon">💼</span>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="https://github.com/farhan" class="contact-link">
+                            <span class="link-icon">🐙</span>
+                            <span>GitHub Repository</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="contact-form glass-panel">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Neural ID (Name)</label>
+                        <div class="input-border"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Data Stream (Email)</label>
+                        <div class="input-border"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" required rows="5"></textarea>
+                        <label for="message">Message Protocol</label>
+                        <div class="input-border"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Transmit Signal</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // ===== GLOBAL VARIABLES =====
+        let currentSection = 'home';
+        let scrollPosition = 0;
+        let isScrolling = false;
+
+        // ===== DOM CONTENT LOADED =====
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeWebsite();
+        });
+
+        // ===== WEBSITE INITIALIZATION =====
+        function initializeWebsite() {
+            setupParticles();
+            setupNavigation();
+            setupScrollEffects();
+            setupAnimations();
+            setupSkillBars();
+            setupContactForm();
+            setupMicroInteractions();
+            animateCounters();
+            setupTiltEffects();
+        }
+
+        // ===== PARTICLES.JS CONFIGURATION =====
+        function setupParticles() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 50,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#FF6A00'
+                    },
+                    shape: {
+                        type: 'circle',
+                        stroke: {
+                            width: 0,
+                            color: '#000000'
+                        }
+                    },
+                    opacity: {
+                        value: 0.3,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.1
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 2,
+                            size_min: 0.1
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#FF6A00',
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'repulse'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        repulse: {
+                            distance: 100,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+
+        // ===== NAVIGATION FUNCTIONALITY =====
+        function setupNavigation() {
+            const navbar = document.querySelector('.navbar');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navIndicator = document.querySelector('.nav-indicator');
+
+            // Mobile menu toggle
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Smooth scrolling and active link management
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        updateActiveLink(link);
+                        updateNavIndicator(link);
+                        
+                        // Close mobile menu
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+
+            // Initialize nav indicator position
+            const activeLink = document.querySelector('.nav-link.active');
+            if (activeLink) {
+                updateNavIndicator(activeLink);
+            }
+        }
+
+        function updateActiveLink(activeLink) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            activeLink.classList.add('active');
+            currentSection = activeLink.getAttribute('data-section');
+        }
+
+        function updateNavIndicator(activeLink) {
+            const navIndicator = document.querySelector('.nav-indicator');
+            const linkRect = activeLink.getBoundingClientRect();
+            const navRect = activeLink.closest('.nav-menu').getBoundingClientRect();
+            
+            navIndicator.style.width = `${linkRect.width}px`;
+            navIndicator.style.left = `${linkRect.left - navRect.left}px`;
+        }
+
+        // ===== SCROLL EFFECTS =====
+        function setupScrollEffects() {
+            let ticking = false;
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        handleScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+
+        function handleScroll() {
+            const currentScrollPos = window.pageYOffset;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollProgress = (currentScrollPos / maxScroll) * 100;
+            
+            // Update scroll progress indicator
+            document.querySelector('.scroll-progress').style.width = `${scrollProgress}%`;
+            
+            // Kinetic typography effect
+            handleKineticTypography(currentScrollPos);
+            
+            // Update active section based on scroll position
+            updateActiveSection();
+            
+            // Glassmorphism intensity based on scroll
+            updateGlassmorphismIntensity(scrollProgress);
+            
+            scrollPosition = currentScrollPos;
+        }
+
+        function handleKineticTypography(currentScrollPos) {
+            const kineticElements = document.querySelectorAll('.kinetic-text');
+            const scrollDirection = currentScrollPos > scrollPosition ? 'down' : 'up';
+            
+            kineticElements.forEach(element => {
+                element.classList.remove('compress', 'expand');
+                
+                if (scrollDirection === 'down') {
+                    element.classList.add('compress');
+                } else if (scrollDirection === 'up') {
+                    element.classList.add('expand');
+                }
+            });
+        }
+
+        function updateActiveSection() {
+            const sections = document.querySelectorAll('.section');
+            const scrollPos = window.scrollY + 200;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    const activeNavLink = document.querySelector(`[data-section="${sectionId}"]`);
+                    if (activeNavLink && !activeNavLink.classList.contains('active')) {
+                        updateActiveLink(activeNavLink);
+                        updateNavIndicator(activeNavLink);
+                    }
+                }
+            });
+        }
+
+        function updateGlassmorphismIntensity(scrollProgress) {
+            const intensity = Math.max(8, 12 - (scrollProgress / 100) * 4);
+            document.documentElement.style.setProperty('--blur-intensity', `${intensity}px`);
+        }
+
+        // ===== ANIMATIONS =====
+        function setupAnimations() {
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        
+                        // Trigger skill bar animations
+                        if (entry.target.classList.contains('skills-grid')) {
+                            animateSkillBars();
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.glass-panel, .section-title').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // ===== SKILL BARS =====
+        function setupSkillBars() {
+            const skillItems = document.querySelectorAll('.skill-item');
+            
+            skillItems.forEach(item => {
+                const level = item.getAttribute('data-level');
+                const progressBar = item.querySelector('.skill-progress');
+                
+                // Store the level for later animation
+                progressBar.setAttribute('data-width', level);
+            });
+        }
+
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            skillBars.forEach((bar, index) => {
+                setTimeout(() => {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = `${width}%`;
+                }, index * 200);
+            });
+        }
+
+        // ===== COUNTER ANIMATION =====
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            const animateCounter = (counter) => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current);
+                }, 16);
+            };
+
+            // Intersection Observer for counters
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        }
+
+        // ===== TILT EFFECTS =====
+        function setupTiltEffects() {
+            const tiltElements = document.querySelectorAll('.hover-tilt');
+            
+            tiltElements.forEach(element => {
+                element.addEventListener('mousemove', handleTilt);
+                element.addEventListener('mouseleave', resetTilt);
+            });
+        }
+
+        function handleTilt(e) {
+            const card = e.currentTarget;
+            const rect = card.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            const mouseX = e.clientX - centerX;
+            const mouseY = e.clientY - centerY;
+            
+            const rotateX = (mouseY / (rect.height / 2)) * -10;
+            const rotateY = (mouseX / (rect.width / 2)) * 10;
+            
+            card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(15px)`;
+            
+            // Update card glow position
+            const cardGlow = card.querySelector('.card-glow');
+            if (cardGlow) {
+                const x = ((mouseX / rect.width) + 0.5) * 100;
+                const y = ((mouseY / rect.height) + 0.5) * 100;
+                cardGlow.style.setProperty('--x', `${x}%`);
+                cardGlow.style.setProperty('--y', `${y}%`);
+            }
+        }
+
+        function resetTilt(e) {
+            const card = e.currentTarget;
+            card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+        }
+
+        // ===== MICRO-INTERACTIONS =====
+        function setupMicroInteractions() {
+            // DNA Mutation
+            const mutateBtn = document.querySelector('.mutate-btn');
+            const mutationResult = document.querySelector('.mutation-result');
+            const genes = document.querySelectorAll('.gene');
+            
+            if (mutateBtn) {
+                mutateBtn.addEventListener('click', () => {
+                    const mutations = ['Quantum', 'Neural', 'Cyber', 'Bio', 'Nano', 'Digital'];
+                    const randomMutation = mutations[Math.floor(Math.random() * mutations.length)];
+                    const randomGene = genes[Math.floor(Math.random() * genes.length)];
+                    const originalText = randomGene.textContent;
+                    
+                    randomGene.style.transform = 'scale(1.2) rotate(360deg)';
+                    randomGene.style.background = 'linear-gradient(45deg, #FF6A00, #00FFB7)';
+                    
+                    setTimeout(() => {
+                        randomGene.textContent = `${randomMutation} ${originalText}`;
+                        randomGene.style.transform = 'scale(1) rotate(0deg)';
+                        
+                        if (mutationResult) {
+                            mutationResult.textContent = `Mutation successful: ${randomMutation} enhancement applied!`;
+                            mutationResult.style.color = '#00FFB7';
+                        }
+                        
+                        setTimeout(() => {
+                            randomGene.textContent = originalText;
+                            randomGene.style.background = '';
+                            if (mutationResult) mutationResult.textContent = '';
+                        }, 3000);
+                    }, 500);
+                });
+            }
+            
+            // Project card pupil dilation effect
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                const projectVisual = card.querySelector('.project-visual');
+                
+                card.addEventListener('mouseenter', () => {
+                    projectVisual.style.transform = 'scale(1.03)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    projectVisual.style.transform = 'scale(1)';
+                });
+            });
+            
+            // Form field particle effects
+            setupFormEffects();
+        }
+
+        function setupFormEffects() {
+            const formInputs = document.querySelectorAll('input, textarea');
+            
+            formInputs.forEach(input => {
+                input.addEventListener('focus', createParticleTrail);
+                input.addEventListener('blur', clearParticleTrail);
+            });
+        }
+
+        function createParticleTrail(e) {
+            const input = e.target;
+            const rect = input.getBoundingClientRect();
+            
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.className = 'input-particle';
+                    particle.style.cssText = `
+                        position: fixed;
+                        width: 4px;
+                        height: 4px;
+                        background: #FF6A00;
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 1000;
+                        left: ${rect.left + Math.random() * rect.width}px;
+                        top: ${rect.top}px;
+                        animation: particle-float 2s forwards;
+                    `;
+                    
+                    document.body.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.parentNode.removeChild(particle);
+                        }
+                    }, 2000);
+                }, i * 100);
+            }
+        }
+
+        function clearParticleTrail() {
+            // Particles will auto-remove via setTimeout
+        }
+
+        // ===== CONTACT FORM =====
+        function setupContactForm() {
+            const contactForm = document.querySelector('.contact-form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleFormSubmit);
+            }
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const submitBtn = e.target.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Simulate form submission
+            submitBtn.innerHTML = '<span>Transmitting...</span>';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<span>Signal Transmitted!</span>';
+                submitBtn.style.background = 'linear-gradient(45deg, #00FFB7, #00E676)';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                    e.target.reset();
+                }, 2000);
+            }, 1500);
+        }
+
+        // ===== KEYBOARD NAVIGATION =====
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                const sections = Array.from(document.querySelectorAll('.section'));
+                const currentIndex = sections.findIndex(section => section.id === currentSection);
+                
+                let nextIndex;
+                if (e.key === 'ArrowDown') {
+                    nextIndex = (currentIndex + 1) % sections.length;
+                } else {
+                    nextIndex = (currentIndex - 1 + sections.length) % sections.length;
+                }
+                
+                sections[nextIndex].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // ===== CSS ANIMATIONS (INJECTED) =====
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes particle-float {
+                0% {
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-50px);
+                    opacity: 0;
+                }
+            }
+            
+            .animate-in {
+                animation: fadeInUp 0.8s ease forwards;
+            }
+            
+            @keyframes fadeInUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // ===== PERFORMANCE MONITORING =====
+        window.addEventListener('load', () => {
+            console.log('%c🚀 NEXUS-GEN Portfolio Loaded Successfully!', 'color: #FF6A00; font-size: 16px; font-weight: bold;');
+            console.log('%c⚡ Neural networks activated, quantum CSS engaged!', 'color: #00FFB7; font-size: 12px;');
+        });
+
+        // ===== DARK MATTER MODE (BONUS) =====
+        function activateDarkMatter() {
+            document.body.classList.add('quantum-mode');
+            
+            // Update particle configuration for dark matter
+            if (window.pJSDom && window.pJSDom[0]) {
+                window.pJSDom[0].pJS.particles.color.value = '#9C27B0';
+                window.pJSDom[0].pJS.particles.line_linked.color = '#9C27B0';
+                window.pJSDom[0].pJS.fn.particlesRefresh();
+            }
+            
+            console.log('%c🌌 Dark Matter Mode Activated!', 'color: #9C27B0; font-size: 14px;');
+        }
+
+        // ===== HAPTIC FEEDBACK (MOBILE) =====
+        function addHapticFeedback() {
+            if ('vibrate' in navigator) {
+                document.querySelectorAll('button, .nav-link, .project-link').forEach(element => {
+                    element.addEventListener('click', () => {
+                        navigator.vibrate(50);
+                    });
+                });
+            }
+        }
+
+        // Initialize haptic feedback
+        addHapticFeedback();
+    </script>
+</body>
+</html>
